@@ -1,3 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap'); /*importing Kumbph Sans   font-family: "Kumbh Sans", sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');/*importing Inter
+font-family: "Inter", sans-serif;*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+:root {
+  /* Absolute Colors */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* Yellow Shades */
+  --color-yellow-55: #FFD11A;
+  --color-yellow-60: #FFD633;
+  --color-yellow-70: #FFE066;
+  --color-yellow-80: #FFEB99;
+  --color-yellow-90: #FFF5CC;
+  --color-yellow-95: #FFFAE5;
+  --color-yellow-97: #FFFCF0;
+  --color-yellow-98: #FBFBFE;
+
+  /* Dark Shades */
+  --color-dark-08: #141414;
+  --color-dark-10: #1A1A1A;
+  --color-dark-15: #262626;
+  --color-dark-20: #333333;
+  --color-dark-25: #404040;
+  --color-dark-30: #4D4D4D;
+  --color-dark-35: #595959;
+  --color-dark-40: #666666;
+
+  /* Grey Shades */
+  --color-grey-50: #7E7E81;
+  --color-grey-60: #98989A;
+  --color-grey-70: #B3B3B3;
+  --color-grey-80: #CCCCCC;
+  --color-grey-85: #E4E4E7;
+  --color-grey-87: #F1F1F3;
+  --color-grey-97: #F7F7F8;
+  --color-grey-98: #FCFCFD;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body{
+  color: var(--color-white);
+  background-color: var(--color-dark-08);
+}
+
+
+
+/*Navbar properties*/
+.top-text{
+  color: var(--color-grey-60);
+}
+.top-text p{
+  font-size: 14px;
+}
+.top-text svg{
+  color: var(--color-yellow-55);
+}
+nav{
+  background-color: var(--color-dark-10);
+}
+
+.contact-button{
+  background-color: var(--color-yellow-55) !important;
+  color: var(--color-black);
+  font-size: 18px;  
+}
+.contact-button:hover{
+  background-color: var(--color-yellow-70) !important;
+  
+}
+
+
+.nav-link{
+  color: var(--color-grey-50);
+  font-size: 18px;
+}
+.nav-link:hover{
+  color: var(--color-grey-70);
+}
+.nav-link.active{
+  color: var(--color-white);
+  background-color: var(--color-dark-08);
+  border-radius: 10px;
+  border: 1px solid var(--color-dark-20);
+}
+
+
+
+/*Footer properties*/
+
+.links-container{
+  border-bottom: 2px solid var(--color-dark-20);
+}
+
+.link-title{
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-white);
+}
+.resource{
+  border: 1px solid var(--color-dark-15);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.bottom-text{
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-dark-40);
+}
+
+@media (max-width: 768px) {
+  .icons{
+    flex-direction: column;
+  }
+  
+}
+
+.bottom-info{
+  width: 95% ;
+  margin: auto;
+  background-color: var(--color-dark-10);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bottom-logo{
+  width: 12%;
+  margin-right: 20px;
+}
+
+.bottom-container{
+  padding: 20px;
+  width: 80%;
+  margin-inline: auto;
+
+}
+
+.bottom-container div{
+  padding-inline: 5px;
+}
+
+
+/*had to give these properties manually since tailwind was giving me a hard time
+cuz I installed flowbite which style overwrites those of tailwind sometimes*/
+.learn{
+  background-color: var(--color-dark-20);
+  font-size: 12px;
+  border-radius: 3px;
+  
+}
+
+.part{
+  font-family: "Kumbh Sans", sans-serif;
+  
+  
+}
+
+.immerse{
+  color: var(--color-grey-50);
+  margin-top: 10px;
+}
+
+
+.sources-container{
+  background-color: var(--color-dark-08);
+  width: 90%;
+}
+
+.source{
+  background-color: var(--color-dark-10);
+  width: 30%;
+}
+
+.source svg{
+  color: black;
+}
+
