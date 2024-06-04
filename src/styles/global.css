@@ -115,6 +115,7 @@ nav{
   display: flex;
   align-items: center;
   width: fit-content;
+  color: var(--color-dark-40);
 }
 
 .bottom-text{
@@ -186,10 +187,27 @@ cuz I installed flowbite which style overwrites those of tailwind sometimes*/
 
 .source{
   background-color: var(--color-dark-10);
-  width: 30%;
+  width: 100%;
+  
+}
+@media (min-width: 640px) {
+  .source {
+    width: 30%;
+  }
 }
 
 .source svg{
   color: black;
 }
+.source p{
+  color: var(--color-grey-60);
+}
 
+.source div div{
+  width: fit-content;
+}
+
+.circle{
+  background-color: var(--color-yellow-55);
+  cursor: pointer;
+}

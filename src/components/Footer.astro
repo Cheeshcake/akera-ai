@@ -23,7 +23,7 @@
           <div
             class=" bg-zinc-800 rounded justify-center items-start gap-2.5 inline-flex"
           >
-            <div class="learn text-white font-['Inter']">
+            <div class="learn text-white font-['Inter'] p-1">
               Learn, Connect, and Innovate
             </div>
           </div>
@@ -42,19 +42,19 @@
       </div>
     </div>
     <div
-      class="sources-container self-stretch p-5  rounded-xl 0 justify-start items-start gap-5 inline-flex"
+      class="sources-container self-stretch p-5  rounded-xl 0 justify-start items-start gap-5 inline-flex flex-col sm:flex-row "
     >
       <div
         class="source grow shrink basis-0 rounded-xl  flex-col justify-start gap-5 inline-flex p-5"
       >
         <div class="self-stretch justify-start items-center gap-5 inline-flex">
-          <div
+          <h6
             class="grow shrink basis-0 text-white font-['Inter'] leading-[33px]"
           >
             Resource Access
-          </div>
+          </h6>
           <div
-            class="p-1 bg-yellow-400 rounded-full justify-start items-start gap-2.5 flex"
+            class="p-1 circle rounded-full justify-start items-start gap-2.5 flex"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -71,22 +71,22 @@
             </svg>
           </div>
         </div>
-        <div class="self-stretch text-neutral-400 font-['Inter'] leading-[27px]">
+        <p class="self-stretch text-neutral-400 font-['Inter'] leading-[27px]">
           Visitors can access a wide range of resources, including ebooks,
           whitepapers, reports.
-        </div>
+        </p>
       </div>
       <div
         class=" source grow shrink basis-0 rounded-xl   flex-col justify-start gap-5 inline-flex p-5"
       >
         <div class="self-stretch justify-start items-center gap-5 inline-flex">
-          <div
+          <h6
             class="grow shrink basis-0 text-white font-['Inter'] leading-[33px]"
           >
             Community Forum
-          </div>
+          </h6>
           <div
-            class="p-1 bg-yellow-400 rounded-full justify-start items-start gap-2.5 flex"
+            class="p-1 circle rounded-full justify-start items-start gap-2.5 flex"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -103,22 +103,22 @@
             </svg>
           </div>
         </div>
-        <div class="self-stretch text-neutral-400 font-['Inter'] leading-[27px]">
+        <p class="self-stretch text-neutral-400 font-['Inter'] leading-[27px]">
           Join our active community forum to discuss industry trends, share
           insights, and collaborate with peers.
-        </div>
+        </p>
       </div>
       <div
         class="source grow shrink basis-0 rounded-xl  flex-col justify-start gap-5 inline-flex p-5"
       >
         <div class="self-stretch justify-start items-center gap-5 inline-flex">
-          <div
+          <h6
             class="grow shrink basis-0 text-white font-['Inter'] leading-[33px]"
           >
             Tech Events
-          </div>
+          </h6>
           <div
-            class="p-1 bg-yellow-400 rounded-full justify-start items-start gap-2.5 flex"
+            class="p-1 circle rounded-full justify-start items-start gap-2.5 flex"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -135,10 +135,10 @@
             </svg>
           </div>
         </div>
-        <div class="self-stretch text-neutral-400 font-['Inter'] leading-[27px]">
+        <p class="self-stretch text-neutral-400 font-['Inter'] leading-[27px]">
           Stay updated on upcoming tech events, webinars, and conferences to
           enhance your knowledge.
-        </div>
+        </p>
       </div>
     </div>
   </div>
@@ -352,6 +352,10 @@
 
   li svg {
     color: var(--color-yellow-55);
+  }
+  h6{
+    font-weight: 600;
+    font-size: 18px;
   }
 </style>
 

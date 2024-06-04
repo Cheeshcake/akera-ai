@@ -1,0 +1,63 @@
+---
+interface Props {
+  title?: string;
+  goTo?: string;
+  goToDisplay:boolean;
+}
+const { title = "default", goTo = "default" ,goToDisplay = true} = Astro.props as Props;
+import "../styles/global.css";
+---
+
+<div class="splitter-container flex justify-center items-between flex-col md:flex-row">
+  <div
+    class="grow shrink basis-0 flex-col justify-center items-start gap-[30px] inline-flex"
+  >
+    <div
+      class="self-stretch  flex-col justify-center items-start gap-4 flex "
+    >
+      <div
+        class=" bg-zinc-800 rounded justify-center items-start gap-2.5 inline-flex"
+      >
+        <div class="learn text-white font-['Inter'] p-1">
+          {title}
+        </div>
+      </div>
+      <div
+      class="part text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white my-6"
+      >
+       <slot/>
+      </div>
+    </div>
+  </div>
+  {goToDisplay && (
+    <div class="mb-4 flex resource p-3 h-10">
+      <a href="#" class="hover:underline">{goTo}</a>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 ml-3 cursor-pointer"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+        ></path>
+      </svg>
+    </div>
+  )}
+</div>
+
+<style>
+      .splitter-container{
+        width:95%;
+        background-color: var(--color-dark-10);
+        margin: auto !important;
+        padding: 50px;
+    }
+    .resource svg{
+      color: var(--color-yellow-55);
+    }
+</style>

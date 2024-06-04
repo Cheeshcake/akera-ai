@@ -1,8 +1,328 @@
 ---
+import Splitter from "../components/Splitter.astro";
+import Testimonial from "../components/Testimonial.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 ---
 
 <MainLayout title="Akera.ai" description="Home Page">
+  <div class="container">
+    <div class="flex flex-col md:flex-row">
+      <section class="hero-bg p-8 w-full sm:w-1/2">
+        <div class="mx-auto">
+          <h2 class="mb-4 text-2xl font-medium font-['Kumbh Sans']">
+            Your Journey to Tomorrow Begins Here
+          </h2>
+          <h1 class="mb-6 text-white font-medium font-['Kumbh Sans']">
+            Explore the Frontiers of Artificial Intelligence
+          </h1>
+          <p class="text-sm mb-10">
+            Welcome to the epicenter of AI innovation. FutureTech AI News is
+            your passport to a world where machines think, learn, and reshape
+            the future. Join us on this visionary expedition into the heart of
+            AI.
+          </p>
+          <div class="grid grid-cols-3 gap-4">
+            <div>
+              <h3 class="text-2xl font-bold">
+                300 <span class="plus">+</span>
+              </h3>
+              <p>Resources available</p>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold">
+                12k <span class="plus">+</span>
+              </h3>
+              <p>Total Downloads</p>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold">
+                10k <span class="plus">+</span>
+              </h3>
+              <p>Active Users</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full sm:w-1/2 overflow-hidden">
+        <img
+          src="src/assets/images/Abstract Design.png"
+          class="abstract-design"
+        />
+        <div>
+          <img src="src/assets/images/profiles.png" class="profiles" />
+        </div>
+        <div>
+          <h3 class="text-xl mb-3">Explore +1000 resources</h3>
+          <p class="description mb-3">
+            Over 1,000 articles on emerging tech trends and breakthroughs.
+          </p>
+          <div class="mb-4 flex resource p-3">
+            <a href="#" class="hover:underline">Explore Resources</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 ml-3 cursor-pointer"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
+            </svg>
+          </div>
+        </div>
+      </section>
+    </div>
 
+    <section class="p-8 bg-black w-full">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 self-stretch">
+          <div>
+            <div class="p-6">
+              <img
+                src="src/assets/icons/latest-icon.png"
+                class="icon w-16 mb-5"
+              />
+              <div class="flex justify-between">
+                <h3 class="text-xl mb-2">Latest News Updates</h3>
+                <div
+                  class="p-2 circle rounded-full justify-start items-start flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="black"
+                    class="w-6 cursor-pointer"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
+                  </svg>
+                </div>
+              </div>
+              <p class="mb-5">Stay Current</p>
+              <p class="description">Over 1,000 articles published monthly</p>
+            </div>
+          </div>
+          <div>
+            <div class="p-6">
+              <img
+                src="src/assets/icons/expert-icon.png"
+                class="icon w-16 mb-5"
+              />
+              <div class="flex justify-between">
+                <h3 class="text-xl mb-2">Expert Contributors</h3>
+                <div
+                  class="p-2 circle rounded-full justify-start items-start flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="black"
+                    class="w-6 cursor-pointer"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
+                  </svg>
+                </div>
+              </div>
+              <p class="mb-5">Trusted Insights</p>
+              <p class="description">50+ renowned AI experts on our team</p>
+            </div>
+          </div>
+          <div>
+            <div class="p-6">
+              <img
+                src="src/assets/icons/global-icon.png"
+                class="icon w-16 mb-5"
+              />
+              <div class="flex justify-between">
+                <h3 class="text-xl mb-2">Global Readership</h3>
+                <div
+                  class="p-2 circle rounded-full justify-start items-start flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="black"
+                    class="w-6 cursor-pointer"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
+                  </svg>
+                </div>
+              </div>
+              <p class="mb-5">Worldwide Impact</p>
+              <p class="description">2 million monthly readers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <Splitter title="Unlock the Power of" goToDisplay={false}>
+    Akera AI Features
+  </Splitter>
+  <section class="p-8 custom-bg">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <div class="flex items-center">
+          <div>
+            <img src="src/assets/icons/future.png" class="w-20 mb-5" />
+            <div class="flex items-center mb-4">
+              <h3 class="ml-4 text-2xl font-bold">Future Technology Blog</h3>
+            </div>
+            <p class="text-lg">
+              Stay informed with our blog section dedicated to future
+              technology.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="feature p-4 rounded-lg">
+            <h3 class="text-xl font-bold">Quantity</h3>
+            <p>
+              Over 1,000 articles on emerging tech trends and breakthroughs.
+            </p>
+          </div>
+          <div class="feature p-4 rounded-lg">
+            <h3 class="text-xl font-bold">Variety</h3>
+            <p>
+              Articles cover fields like AI, robotics, biotechnology, and more.
+            </p>
+          </div>
+          <div class="feature p-4 rounded-lg">
+            <h3 class="text-xl font-bold">Frequency</h3>
+            <p>Fresh content added daily to keep you up to date.</p>
+          </div>
+          <div class="feature p-4 rounded-lg">
+            <h3 class="text-xl font-bold">Authoritative</h3>
+            <p>
+              Written by our team of tech experts and industry professionals.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 mb-10">
+        <div class="flex items-center">
+          <div>
+            <img src="src/assets/icons/research.png" class="w-20 mb-3" />
+            <div class="flex items-center mb-4">
+              <h3 class="ml-4 text-2xl font-bold">Research Insights Blogs</h3>
+            </div>
+            <p class="text-lg">
+              Dive deep into future technology concepts with our research
+              section.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="feature p-4 rounded-lg">
+            <h3 class="text-xl font-bold">Depth</h3>
+            <p>500+ research articles for in-depth understanding.</p>
+          </div>
+          <div class="feature p-4 rounded-lg">
+            <h3 class="text-xl font-bold">Graphics</h3>
+            <p>Visual aids and infographics to enhance comprehension.</p>
+          </div>
+          <div class="feature p-4 rounded-lg">
+            <h3 class="text-xl font-bold">Trends</h3>
+            <p>Explore emerging trends in future technology research.</p>
+          </div>
+          <div class="feature p-4 rounded-lg">
+            <h3 class="text-xl font-bold">Contributors</h3>
+            <p>Contributions from tech researchers and academics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Splitter
+    title="What Our Readers Say"
+    goTo="View All Testimonials"
+    goToDisplay={true}
+  >
+    Real Words from Real Readers
+  </Splitter>
+  <section class="p-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Testimonial name="Sarah Thompson" location="San Francisco, USA" img="src/assets/images/profile.png">
+          The ebooks on AI in education have been a game-changer for my
+              research. They provide in-depth insights and case studies that are
+              invaluable for staying updated.
+        </Testimonial>
+        <Testimonial name="Raj Patel" location="Mumbai, India" img="src/assets/images/profile.png">
+          The whitepapers on renewable energy strategies have greatly
+              influenced my work. They offer detailed data and analysis.
+        </Testimonial> 
+        <Testimonial name="Emily Adams" location="London, UK" img="src/assets/images/profile.png">
+          The AI in healthcare reports have been an essential resource for
+              our hospital. They highlight the latest innovations and best
+              practices, improving patient care.
+        </Testimonial>
+        <Testimonial name="Alan Jackson " location="Houston, USA" img="src/assets/images/profile.png">
+          The reports on space mining prospects have fueled my passion for
+              space exploration. They provide a comprehensive view.
+        </Testimonial>
+        <Testimonial name="Jessica Miller " location="Boston, USA" img="src/assets/images/profile.png">
+          The research papers on genomic breakthroughs have been a goldmine
+              of information. They’ve shaped the direction of my research in
+              genomics.
+        </Testimonial>
+        <Testimonial name="Diego Lopez" location="Barcelona, Spain" img="src/assets/images/profile.png">
+          The ebooks on renewable energy strategies have given me the
+              insights I needed to pivot our startup toward sustainability.
+        </Testimonial>
+        
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .container {
+      width: 90%;
+      margin: auto;
+    }
+    .abstract-design {
+      width: 600px;
+    }
+    .resource svg,
+    .plus {
+      color: var(--color-yellow-55);
+    }
+    .profiles {
+      width: 150px;
+    }
+
+    h1 {
+      font-size: 50px;
+    }
+    h2,
+    p {
+      color: var(--color-dark-40);
+    }
+    .description {
+      color: var(--color-grey-60);
+    }
+    .feature {
+      background-color: var(--color-dark-10);
+      padding: 20px;
+    }
+    
+  </style>
 </MainLayout>
