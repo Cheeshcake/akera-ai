@@ -1,0 +1,51 @@
+---
+import Splitter from "../components/Splitter.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
+---
+
+<MainLayout title="News" description="News Page">
+  <div class="headline-section">
+    <div class="headline-title font-medium text-4xl sm:text-6xl">
+      Today's Headlines: Stay
+    </div>
+    <div class="flex flex-col sm:flex-row sm:justify-start sm:items-start">
+      <div class="headline-title font-medium text-4xl sm:text-6xl">
+        Informed
+      </div>
+      <div class="headline-subtitle">
+        Explore the latest news from around the world. We bring you
+        up-to-the-minute updates on the most significant events, trends, and
+        stories. <br /> Discover the world through our news coverage.
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .headline-section {
+      padding: 20px;
+      color: white;
+      width: 95%;
+      margin: auto;
+    }
+    .headline-title {
+      font-family: "Kumbh Sans", sans-serif;
+    }
+    .headline-subtitle {
+      font-size: 1rem;
+      color: var(--color-grey-60);
+      font-family: "Inter", sans-serif;
+      margin: 10px;
+    }
+
+    @media (min-width: 640px) {
+      .sm\:text-6xl {
+        font-size: 3.5rem ;
+        line-height: 1;
+      }
+      .headline-section{
+        padding: 50px;
+      }
+    }
+  </style>
+</MainLayout>
