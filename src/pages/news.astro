@@ -1,6 +1,7 @@
 ---
 import BlogList from "../components/BlogList.astro";
 import Splitter from "../components/Splitter.astro";
+import VideoGrid from "../components/VideoGrid.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 ---
@@ -32,6 +33,10 @@ import "../styles/global.css";
     </div>
     <BlogList />
   </div>
+  <Splitter title="Featured Videos" goTo="View All" goToDisplay={true}>
+    Visual Insights for the Modern Viewer
+  </Splitter>
+  <VideoGrid/>
 
   <style>
     .headline-section {
