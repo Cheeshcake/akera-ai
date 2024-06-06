@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/BlogLayout.astro"
 title: "The Future of Autonomous Vehicles"
 author: "Sarah Ethicist"
 date: "October 11, 2023"

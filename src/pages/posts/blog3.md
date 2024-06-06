@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/BlogLayout.astro"
 title: "Tech Startups Secure Record Funding"
 author: "Astronomer X"
 date: "December 10, 2023"

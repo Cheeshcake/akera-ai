@@ -2,5 +2,5 @@
 export function getPostUrl(post) {
   const filePath = post.file;
   const fileName = filePath.split('/').pop().replace('.md', '');
-  return `../posts/${fileName}/`; 
+  return `../${fileName}/`; 
 }

@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/BlogLayout.astro"
 title: "Tech Giants Announce New Product Line"
 author: "John Techson"
 date: "October 15, 2023"
