@@ -1,4 +1,5 @@
 ---
+import BlogList from "../components/BlogList.astro";
 import Splitter from "../components/Splitter.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
@@ -6,7 +7,7 @@ import "../styles/global.css";
 
 <MainLayout title="News" description="News Page">
   <div class="headline-section">
-    <div class="headline-title font-medium text-4xl sm:text-6xl">
+    <div class="headline-title font-medium text-4xl sm:text-6xl mb-5">
       Today's Headlines: Stay
     </div>
     <div class="flex flex-col sm:flex-row sm:justify-start sm:items-start">
@@ -19,6 +20,17 @@ import "../styles/global.css";
         stories. <br /> Discover the world through our news coverage.
       </div>
     </div>
+  </div>
+  <div class="blog-list">
+    <div class="blog-filter-btns flex justify-center items-center mb-10 flex-wrap">
+      <button class="blog-filter-btn w-40">All</button>
+      <button class="blog-filter-btn w-40">Technology</button>
+      <button class="blog-filter-btn w-40">Politics</button>
+      <button class="blog-filter-btn w-40">Health</button>
+      <button class="blog-filter-btn w-40">Environment</button>
+      <button class="blog-filter-btn w-40">Sports</button>
+    </div>
+    <BlogList />
   </div>
 
   <style>
@@ -40,12 +52,75 @@ import "../styles/global.css";
 
     @media (min-width: 640px) {
       .sm\:text-6xl {
-        font-size: 3.5rem ;
+        font-size: 3.5rem;
         line-height: 1;
       }
-      .headline-section{
+      .headline-section {
         padding: 50px;
       }
     }
+
+    .blog-list {
+      width: 95%;
+      margin: auto;
+    }
+    /* .blog-filter-btns {
+      overflow-x: scroll;
+    } */
+    .blog-filter-btn {
+      border: 0.2px solid var(--color-dark-20);
+      border-radius: 5px;
+      color: var(--color-grey-60);
+      background-color: var(--color-dark-10);
+      padding: 10px 20px;
+      margin-left: 50px;
+      margin-bottom: 10px;
+    }
+    .blog-filter-btn:hover {
+      background-color: var(--color-dark-20);
+      color: var(--color-grey-70);
+    }
+    .blog-filter-btn.active {
+      color: var(--color-white);
+      background-color: var(--color-dark-08);
+    }
   </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const blogBtns = document.querySelectorAll(".blog-filter-btn");
+    const postCards = document.querySelectorAll(".post-card");
+
+    function setActiveLink() {
+      blogBtns.forEach((btn) => btn.classList.remove("active"));
+      this.classList.add("active");
+
+      const category = this.textContent.toLowerCase();
+      postCards.forEach((card) => {
+        const cardCategory = card.dataset.category.toLowerCase();
+        if (category === "all" || cardCategory === category) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    blogBtns.forEach((btn) => btn.addEventListener("click", setActiveLink));
+  });
+</script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const blogBtn = document.querySelectorAll(".blog-filter-btn");
+
+      function setActiveLink() {
+        blogBtn.forEach((link) => link.classList.remove("active"));
+        this.classList.add("active");
+      }
+
+      blogBtn.forEach((link) => link.addEventListener("click", setActiveLink));
+    });
+  </script>
 </MainLayout>

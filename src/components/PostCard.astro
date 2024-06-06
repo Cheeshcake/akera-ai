@@ -1,0 +1,163 @@
+---
+const { frontmatter, url } = Astro.props;
+const { title, author, date, category, description } = frontmatter;
+
+---
+
+<div
+  class="post-card w-full flex p-5 flex-col sm:flex-row justify-center sm:justify-start" data-category={category}
+>
+  <div class="card-left flex px-5 my-6 sm:my-0">
+    <img src="../src/assets/images/profile.png" alt="" class="w-10 h-10" />
+    <div>
+      <h3>
+        {author}
+      </h3>
+      <p>
+        {category}
+      </p>
+    </div>
+  </div>
+  <div class="card-right flex justify-between flex-col sm:flex-row py-6">
+    <div>
+      <h4 class="font-medium">
+        {date}
+      </h4>
+      <h3 class="text-2xl font-medium">
+        {title}
+      </h3>
+      <p class="text-sm">
+        {description}
+      </p>
+      <div class="flex">
+        <div
+          class="like-comm-share rounded-full cursor-pointer flex items-center mt-5"
+          id="like-btn"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#4D4D4D"
+            class="w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+            ></path>
+          </svg>
+          <p class="text-sm">24.5k</p>
+        </div>
+        <div
+          class="like-comm-share rounded-full cursor-pointer flex items-center mt-5"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#4D4D4D"
+            class="w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z"
+            ></path>
+          </svg>
+
+          <p class="text-sm">50</p>
+        </div>
+        <div
+          class="like-comm-share rounded-full cursor-pointer flex items-center mt-5"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#4D4D4D"
+            class="w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+            ></path>
+          </svg>
+          <p class="text-sm">20</p>
+        </div>
+      </div>
+    </div>
+
+    <a href={url}>
+      <div class="my-4 flex resource" id="blog-read-more">
+        <a href={url} class="hover:underline cursor-pointer">Read More</a>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="#FFD11A"
+          class="w-6 ml-3 cursor-pointer"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
+        </svg>
+      </div>
+    </a>
+  </div>
+</div>
+
+<style>
+  .post-card {
+    border-top: 1px solid var(--color-dark-20);
+  }
+  p {
+    color: var(--color-grey-60) !important;
+  }
+
+  .card-left {
+    width: 20%;
+  }
+  .card-left div {
+    margin-left: 15px;
+  }
+  .card-right {
+    width: 80%;
+  }
+  h4 {
+    color: var(--color-grey-60);
+  }
+  .card-right div h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #blog-read-more {
+    height: fit-content;
+  }
+  .like-comm-share {
+    background-color: var(--color-dark-08);
+    padding: 1px 10px;
+    width: fit-content;
+    font-size: 25px;
+    border: 1px solid var(--color-dark-20);
+    margin-right: 10px;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("#like-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        const svg = button.querySelector("svg");
+        const currentFill = svg.getAttribute("fill");
+        svg.setAttribute("fill", currentFill === "red" ? "none" : "red");
+      });
+    });
+  });
+</script>
