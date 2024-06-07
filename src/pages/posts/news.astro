@@ -23,7 +23,9 @@ import "../../styles/global.css";
     </div>
   </div>
   <div class="blog-list">
-    <div class="blog-filter-btns flex justify-center items-center mb-10 flex-wrap">
+    <div
+      class="blog-filter-btns flex justify-center items-center mb-10 flex-wrap"
+    >
       <button class="blog-filter-btn w-40">All</button>
       <button class="blog-filter-btn w-40">Technology</button>
       <button class="blog-filter-btn w-40">Politics</button>
@@ -36,7 +38,7 @@ import "../../styles/global.css";
   <Splitter title="Featured Videos" goTo="View All" goToDisplay={true}>
     Visual Insights for the Modern Viewer
   </Splitter>
-  <VideoGrid/>
+  <VideoGrid />
 
   <style>
     .headline-section {
@@ -91,41 +93,46 @@ import "../../styles/global.css";
     }
   </style>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const blogBtns = document.querySelectorAll(".blog-filter-btn");
-    const postCards = document.querySelectorAll(".post-card");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const blogBtns = document.querySelectorAll(".blog-filter-btn");
+      const postCards = document.querySelectorAll(".post-card");
 
-    function setActiveLink() {
-      blogBtns.forEach((btn) => btn.classList.remove("active"));
-      this.classList.add("active");
+      function setActiveLink(this: HTMLElement) {
+        blogBtns.forEach((btn) => btn.classList.remove("active"));
+        this.classList.add("active");
 
-      const category = this.textContent.toLowerCase();
-      postCards.forEach((card) => {
-        const cardCategory = card.dataset.category.toLowerCase();
-        if (category === "all" || cardCategory === category) {
-          card.style.display = "flex";
-        } else {
-          card.style.display = "none";
-        }
-      });
-    }
+        const category = this.textContent?.toLowerCase() || "";
+        postCards.forEach((card) => {
+          const cardCategory = (
+            card as HTMLElement
+          ).dataset.category?.toLowerCase();
+          if (category === "all" || cardCategory === category) {
+            (card as HTMLElement).style.display = "flex";
+          } else {
+            (card as HTMLElement).style.display = "none";
+          }
+        });
+      }
 
-    blogBtns.forEach((btn) => btn.addEventListener("click", setActiveLink));
-  });
-</script>
-
+      blogBtns.forEach((btn) => btn.addEventListener("click", setActiveLink));
+    });
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const blogBtn = document.querySelectorAll(".blog-filter-btn");
 
-      function setActiveLink() {
+      function setActiveLink(this: HTMLElement) {
         blogBtn.forEach((link) => link.classList.remove("active"));
         this.classList.add("active");
       }
 
-      blogBtn.forEach((link) => link.addEventListener("click", setActiveLink));
+      blogBtn.forEach((link) =>
+        link.addEventListener("click", function (this: HTMLElement) {
+          setActiveLink.call(this);
+        })
+      );
     });
   </script>
 </MainLayout>

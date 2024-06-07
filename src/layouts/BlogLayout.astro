@@ -2,7 +2,7 @@
 import MainLayout from "./MainLayout.astro";
 import "../styles/global.css";
 import RelatedPosts from "../components/RelatedPosts.astro";
-import { formatDate } from "../js/utils"
+import { formatDate } from "../js/utils";
 
 const { frontmatter } = Astro.props;
 const { title, author, image, date, category, readingTime } = frontmatter;
@@ -14,7 +14,6 @@ const relatedPosts = allPosts
       post.frontmatter.category === category && post.frontmatter.title !== title
   )
   .slice(0, 3);
-
 ---
 
 <MainLayout title={title}>
@@ -148,8 +147,7 @@ const relatedPosts = allPosts
       </aside>
     </div>
   </div>
-  <RelatedPosts {relatedPosts}/>
-
+  <RelatedPosts {relatedPosts} />
 </MainLayout>
 
 <style>
@@ -238,7 +236,6 @@ const relatedPosts = allPosts
       line-height: 1;
     }
   }
-  
 
   .table-of-contents {
     background-color: var(--color-dark-10);
@@ -250,8 +247,12 @@ const relatedPosts = allPosts
     document.querySelectorAll("#like-btn").forEach((button) => {
       button.addEventListener("click", () => {
         const svg = button.querySelector("svg");
-        const currentFill = svg.getAttribute("fill");
-        svg.setAttribute("fill", currentFill === "red" ? "none" : "red");
+        if (svg) {
+          const currentFill = svg.getAttribute("fill");
+          svg.setAttribute("fill", currentFill === "red" ? "none" : "red");
+        } else {
+          console.error("SVG element not found within button");
+        }
       });
     });
   });
@@ -279,7 +280,11 @@ const relatedPosts = allPosts
   });
 
   const tocContainer = document.querySelector(".table-of-contents");
-  tocContainer.appendChild(tocList);
+  if (tocContainer) {
+    tocContainer.appendChild(tocList);
+  } else {
+    console.error("Table of contents container not found");
+  }
 
   const readMoreBtn = document.getElementById("read-more-btn");
   const blogArticle = document.querySelector(".blog-article");
