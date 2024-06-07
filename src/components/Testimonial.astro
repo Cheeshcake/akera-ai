@@ -28,7 +28,7 @@ import "../styles/global.css";
   </div>
   <div class="testimonial-content flex flex-col justify-center items-center  ">
     <div class="rating-stars rounded-full">★★★★★</div>
-    <p class="text-center">
+    <p class="text-center review">
       <slot/>
     </p>
   </div>
@@ -65,5 +65,10 @@ import "../styles/global.css";
   }
   .location-testimonial{
     color: var(--color-dark-40);
+  }
+
+  /*overwriting the properties of the p tag in global.css*/
+  .review{
+    color: var(--color-white) !important;
   }
 </style>

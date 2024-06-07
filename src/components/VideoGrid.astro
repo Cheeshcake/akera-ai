@@ -11,7 +11,7 @@ import { videos } from "../js/videos";
             <img
               src={video.thumbnail}
               alt={video.title}
-              class="w-full object-cover rounded-t-xl "
+              class="w-full object-cover rounded-t-xl"
             />
             <div class=" absolute inset-0 flex items-end justify-between p-4  ">
               <button class="thumbnail-btn bg-white rounded-full p-2 ">
@@ -33,7 +33,7 @@ import { videos } from "../js/videos";
               <span class="thumbnail-duration text-sm ">{video.duration}</span>
             </div>
           </div>
-          <div class=" p-4 rounded-b-lg">
+          <div class=" p-4 rounded-b-lg w-full">
             <h3 class="text-lg font-semibold mb-1">{video.title}</h3>
             <p class="video-description text-sm">{video.description}</p>
           </div>
@@ -65,4 +65,7 @@ import { videos } from "../js/videos";
     );
     pointer-events: none;
   }
+ 
+  
+
 </style>

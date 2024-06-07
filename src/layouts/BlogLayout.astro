@@ -1,8 +1,286 @@
 ---
 import MainLayout from "./MainLayout.astro";
-
+import "../styles/global.css";
+const { frontmatter } = Astro.props;
+const { title, author, image, date, category, readingTime } = frontmatter;
 ---
 
-<MainLayout title="Blog" >
-  
+<MainLayout title={title}>
+  <div class="blog-content container">
+    <header class="blog-header relative">
+      <img src={image} alt="Blog Image" class="blog-image"/>
+      <div
+        class="header-content absolute inset-0 flex items-end justify-center text-center"
+      >
+        <h1 class="text-xl sm:text-5xl font-medium mb-5">{title}</h1>
+      </div>
+    </header>
+    <div class="blog-body container flex flex-col-reverse sm:flex-row">
+      <div class="blog-article-container">
+        <article class="blog-article p-8 w-full">
+          <slot />
+        </article>
+        <button id="read-more-btn" class="read-more-btn flex rounded-lg">
+          <p>Read Full Blog</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="var(--color-grey-60)"
+            class="w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"></path>
+          </svg>
+        </button>
+      </div>
+
+      <aside class="blog-info p-8 w-full">
+        <div class="flex flex-col">
+          <div class="flex mb-10">
+            <div
+              class="like-comm-share rounded-full cursor-pointer flex items-center mt-5"
+              id="like-btn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#4D4D4D"
+                class="w-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                ></path>
+              </svg>
+              <p class="text-sm">24.5k</p>
+            </div>
+            <div
+              class="like-comm-share rounded-full cursor-pointer flex items-center mt-5"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#4D4D4D"
+                class="w-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z"
+                ></path>
+              </svg>
+
+              <p class="text-sm">50</p>
+            </div>
+            <div
+              class="like-comm-share rounded-full cursor-pointer flex items-center mt-5"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#4D4D4D"
+                class="w-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+                ></path>
+              </svg>
+              <p class="text-sm">20</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-8 mb-10">
+            <div>
+              <p>Publication Date</p>
+              <h4>
+                {date}
+              </h4>
+            </div>
+            <div>
+              <p>Category</p>
+              <h4>
+                {category}
+              </h4>
+            </div>
+            <div>
+              <p>Reading Time</p>
+              <h4>
+                {readingTime} Min
+              </h4>
+            </div>
+            <div>
+              <p>Author Name</p>
+              <h4>
+                {author}
+              </h4>
+            </div>
+          </div>
+        </div>
+        <!-- Table of Contents -->
+        <div class="table-container">
+          <p class="mb-5">Table of Contents</p>
+          <div class="table-of-contents p-8 rounded-lg"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
 </MainLayout>
+
+<style>
+  .blog-content {
+    width: 95%;
+    margin: auto;
+  }
+.blog-image{
+  height: 200px;
+  width: 100%;
+  object-fit:cover;
+}
+@media (min-width: 768px) {
+    .blog-image{
+      height: 250px;
+    }
+  }
+@media (min-width: 640px) {
+    .blog-image{
+      height: 500px;
+    }
+  }
+
+  .blog-body {
+    flex-direction: column-reverse;
+  }
+  @media (min-width: 640px) {
+    .sm\:flex-row {
+      flex-direction: row;
+    }
+  }
+  .blog-article-container {
+    width: 100%;
+  }
+
+  .blog-article {
+    max-height: 600px;
+    overflow-y: hidden;
+    position: relative;
+  }
+
+  .blog-article::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(transparent, var(--color-dark-08));
+  }
+  .blog-article.expanded {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .blog-article.expanded::after {
+    display: none;
+  }
+
+  .read-more-btn {
+    margin: auto;
+    border: 1px solid var(--color-dark-15);
+    padding: 10px 20px;
+  }
+  .read-more-btn:hover {
+    background-color: var(--color-dark-20);
+  }
+
+  @media (min-width: 640px) {
+    .blog-article-container {
+      width: 70%;
+    }
+  }
+  .blog-info {
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .blog-info {
+      width: 30%;
+    }
+  }
+  @media (min-width: 640px) {
+    .sm\:text-5xl {
+      font-size: 3rem /* 48px */;
+      line-height: 1;
+    }
+  }
+  .like-comm-share {
+    background-color: var(--color-dark-08);
+    padding: 1px 10px;
+    width: fit-content;
+    font-size: 25px;
+    border: 1px solid var(--color-dark-20);
+    margin-right: 10px;
+  }
+
+  .table-of-contents {
+    background-color: var(--color-dark-10);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("#like-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        const svg = button.querySelector("svg");
+        const currentFill = svg.getAttribute("fill");
+        svg.setAttribute("fill", currentFill === "red" ? "none" : "red");
+      });
+    });
+  });
+
+  const headings = document.querySelectorAll(
+    ".blog-article h1, .blog-article h2, .blog-article h3, .blog-article h4, .blog-article h5, .blog-article h6"
+  );
+
+  //properties for the headings in the blog article
+  headings.forEach((heading) => {
+    (heading as HTMLElement).style.fontSize = "25px";
+    (heading as HTMLElement).style.fontWeight = "500";
+    (heading as HTMLElement).style.marginBottom = "20px";
+    (heading as HTMLElement).style.marginTop = "20px";
+  });
+
+  //creating the table of contents
+  const tocList = document.createElement("ul");
+  tocList.style.listStyleType = "disc";
+  headings.forEach((heading) => {
+    const listItem = document.createElement("li");
+    listItem.style.marginBottom = "20px";
+    listItem.textContent = heading.textContent;
+    tocList.appendChild(listItem);
+  });
+
+  const tocContainer = document.querySelector(".table-of-contents");
+  tocContainer.appendChild(tocList);
+
+  const readMoreBtn = document.getElementById("read-more-btn");
+  const blogArticle = document.querySelector(".blog-article");
+
+  if (readMoreBtn && blogArticle) {
+    readMoreBtn.addEventListener("click", () => {
+      blogArticle.classList.add("expanded");
+      readMoreBtn.style.display = "none"; 
+    });
+  }
+</script>

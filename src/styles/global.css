@@ -53,6 +53,9 @@ body{
   color: var(--color-white);
   background-color: var(--color-dark-08);
 }
+p {
+  color: var(--color-grey-60) !important;
+}
 
 
 
