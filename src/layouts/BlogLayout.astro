@@ -1,14 +1,25 @@
 ---
 import MainLayout from "./MainLayout.astro";
 import "../styles/global.css";
+import RelatedPosts from "../components/RelatedPosts.astro";
+
 const { frontmatter } = Astro.props;
 const { title, author, image, date, category, readingTime } = frontmatter;
+const allPosts = await Astro.glob("../pages/posts/*.md");
+
+const relatedPosts = allPosts
+  .filter(
+    (post) =>
+      post.frontmatter.category === category && post.frontmatter.title !== title
+  )
+  .slice(0, 3);
+
 ---
 
 <MainLayout title={title}>
   <div class="blog-content container">
     <header class="blog-header relative">
-      <img src={image} alt="Blog Image" class="blog-image"/>
+      <img src={image} alt="Blog Image" class="blog-image" />
       <div
         class="header-content absolute inset-0 flex items-end justify-center text-center"
       >
@@ -136,6 +147,8 @@ const { title, author, image, date, category, readingTime } = frontmatter;
       </aside>
     </div>
   </div>
+  <RelatedPosts {relatedPosts}/>
+
 </MainLayout>
 
 <style>
@@ -143,18 +156,18 @@ const { title, author, image, date, category, readingTime } = frontmatter;
     width: 95%;
     margin: auto;
   }
-.blog-image{
-  height: 200px;
-  width: 100%;
-  object-fit:cover;
-}
-@media (min-width: 768px) {
-    .blog-image{
+  .blog-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+  @media (min-width: 768px) {
+    .blog-image {
       height: 250px;
     }
   }
-@media (min-width: 640px) {
-    .blog-image{
+  @media (min-width: 640px) {
+    .blog-image {
       height: 500px;
     }
   }
@@ -224,14 +237,7 @@ const { title, author, image, date, category, readingTime } = frontmatter;
       line-height: 1;
     }
   }
-  .like-comm-share {
-    background-color: var(--color-dark-08);
-    padding: 1px 10px;
-    width: fit-content;
-    font-size: 25px;
-    border: 1px solid var(--color-dark-20);
-    margin-right: 10px;
-  }
+  
 
   .table-of-contents {
     background-color: var(--color-dark-10);
@@ -280,7 +286,7 @@ const { title, author, image, date, category, readingTime } = frontmatter;
   if (readMoreBtn && blogArticle) {
     readMoreBtn.addEventListener("click", () => {
       blogArticle.classList.add("expanded");
-      readMoreBtn.style.display = "none"; 
+      readMoreBtn.style.display = "none";
     });
   }
 </script>

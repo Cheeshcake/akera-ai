@@ -216,3 +216,13 @@ cuz I installed flowbite which style overwrites those of tailwind sometimes*/
 }
 
 
+.like-comm-share {
+  background-color: var(--color-dark-08);
+  padding: 1px 10px;
+  width: fit-content;
+  font-size: 25px;
+  border: 1px solid var(--color-dark-20);
+  margin-right: 10px;
+}
+
+

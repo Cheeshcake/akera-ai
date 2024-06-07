@@ -11,7 +11,7 @@ import { videos } from "../js/videos";
             <img
               src={video.thumbnail}
               alt={video.title}
-              class="w-full object-cover rounded-t-xl"
+              class="video-img w-full rounded-t-xl"
             />
             <div class=" absolute inset-0 flex items-end justify-between p-4  ">
               <button class="thumbnail-btn bg-white rounded-full p-2 ">
@@ -44,6 +44,10 @@ import { videos } from "../js/videos";
 </div>
 
 <style>
+  .video-img{
+    height: 300px;
+    object-fit: cover;
+  }
   .videos-container {
     width: 80%;
     margin: auto;
