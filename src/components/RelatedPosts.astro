@@ -1,12 +1,20 @@
 ---
 const { relatedPosts } = Astro.props;
+interface Post {
+  frontmatter: {
+    image: string;
+    title: string;
+    category: string;
+  };
+  url: string;
+}
 ---
 
 <div
   class="container related-posts-container grid grid-cols-1 sm:grid-cols-3 gap-8"
 >
   {
-    relatedPosts.map((post) => (
+    relatedPosts.map((post: Post) => (
       <div class="post flex flex-col">
         <img src={post.frontmatter.image} class="related-post-img rounded-lg" />
         <div class="py-5">

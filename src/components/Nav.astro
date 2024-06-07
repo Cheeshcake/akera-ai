@@ -7,7 +7,9 @@
   rel="stylesheet"
 />
 
-<div class="top-text text-center flex flex-row justify-center items-center p-3 md:text-sm sm:text-xs">
+<div
+  class="top-text text-center flex flex-row justify-center items-center p-3 md:text-sm sm:text-xs"
+>
   <p class="cursor-pointer">
     Subscribe to our Newsletter For New & latest Blogs and Resources
   </p>
@@ -30,10 +32,7 @@
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >
-    <a
-      href="/"
-      class="flex items-center space-x-3 rtl:space-x-reverse"
-    >
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="/src/assets/images/icon.png" class="h-8" alt="Akera Logo" />
       <span class="self-center text-2xl font-semibold whitespace-nowrap"
         >Akera.ai</span
@@ -42,7 +41,7 @@
     <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
       <button
         type="button"
-        class="contact-button rounded-lg  px-4 py-2 text-center hidden md:block"
+        class="contact-button rounded-lg px-4 py-2 text-center hidden md:block"
         >Contact Us</button
       >
       <button
@@ -84,7 +83,9 @@
           >
         </li>
         <li>
-          <a href="/posts/news/" class="nav-link block py-2 px-3 rounded">News</a>
+          <a href="/posts/news/" class="nav-link block py-2 px-3 rounded"
+            >News</a
+          >
         </li>
         <li>
           <a href="#" class="nav-link block py-2 px-3 rounded">Podcasts</a>
@@ -98,15 +99,19 @@
 </nav>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll(".nav-link");
 
-    function setActiveLink() {
+    function setActiveLink(this: HTMLElement) {
       navLinks.forEach((link) => link.classList.remove("active"));
       this.classList.add("active");
     }
 
-    navLinks.forEach((link) => link.addEventListener("click", setActiveLink));
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function (this: HTMLElement) {
+        setActiveLink.call(this);
+      });
+    });
   });
 </script>
 
