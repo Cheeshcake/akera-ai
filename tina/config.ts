@@ -22,10 +22,9 @@ export default defineConfig({
   media: {
     tina: {
       mediaRoot: "",
-      publicFolder: "src/assets",
+      publicFolder: "public",
     },
   },
-  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
       {
@@ -41,12 +40,71 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "string",
+            name: "author",
+            label: "Author",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "authorImage",
+            label: "Author Image",
+            required: true,
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Blog Image",
+            required: true,
+          },
+          {
+            type: "datetime",
+            name: "date",
+            label: "Date",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Category",
+            options: ["Technology", "Politics", "Health", "Environment", "Sports"],
+            required: true,
+          },
+          {
+            type: "string",
+            name: "readingTime",
+            label: "Reading Time (in minutes)",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            required: true,
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
             type: "rich-text",
             name: "body",
-            label: "Body",
+            label: "Content",
             isBody: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "layout",
+            label: "Layout",
+            required: true,
+            ui: {
+              component: "hidden", 
+            },
           },
         ],
+        defaultItem: () => ({
+          layout: "../../layouts/BlogLayout.astro",
+        }),
       },
     ],
   },

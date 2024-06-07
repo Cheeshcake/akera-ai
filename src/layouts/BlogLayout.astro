@@ -2,6 +2,7 @@
 import MainLayout from "./MainLayout.astro";
 import "../styles/global.css";
 import RelatedPosts from "../components/RelatedPosts.astro";
+import { formatDate } from "../js/utils"
 
 const { frontmatter } = Astro.props;
 const { title, author, image, date, category, readingTime } = frontmatter;
@@ -116,7 +117,7 @@ const relatedPosts = allPosts
             <div>
               <p>Publication Date</p>
               <h4>
-                {date}
+                {formatDate(date)}
               </h4>
             </div>
             <div>

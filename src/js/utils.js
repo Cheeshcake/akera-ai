@@ -4,3 +4,8 @@ export function getPostUrl(post) {
   const fileName = filePath.split('/').pop().replace('.md', '');
   return `../${fileName}/`; 
 }
+export function formatDate(date) {
+  return new Date(date).toLocaleDateString('en-US', {
+    timeZone: "UTC",
+  })
+}

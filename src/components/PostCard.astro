@@ -1,4 +1,5 @@
 ---
+import { formatDate } from "../js/utils"
 const { frontmatter, url } = Astro.props;
 const { title, author,authorImage, date, category, description } = frontmatter;
 
@@ -8,7 +9,7 @@ const { title, author,authorImage, date, category, description } = frontmatter;
   class="post-card w-full flex p-5 flex-col sm:flex-row justify-center sm:justify-start" data-category={category}
 >
   <div class="card-left flex px-5 my-6 sm:my-0">
-    <img src={authorImage} alt="" class="w-10 h-10" />
+    <img src={authorImage} alt="" class="w-10 h-10 rounded-full" />
     <div>
       <h3>
         {author}
@@ -21,7 +22,7 @@ const { title, author,authorImage, date, category, description } = frontmatter;
   <div class="card-right flex justify-between flex-col sm:flex-row py-6">
     <div class="card-info">
       <h4 class="font-medium">
-        {date}
+        {formatDate(date)}
       </h4>
       <h3 class="text-2xl font-medium">
         {title}
