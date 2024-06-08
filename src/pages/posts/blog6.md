@@ -2,8 +2,8 @@
 layout: ../../layouts/BlogLayout.astro
 title: COVID-19 Variants
 author: "Astronomer X"
-authorImage: /src/assets/images/profile3.png
-image: "/src/assets/images/blog-image6.png"
+authorImage: /images/profile3.png
+image: "/images/blog-image6.png"
 date: 'February 4, 2022'
 category: Politics
 readingTime: "17"

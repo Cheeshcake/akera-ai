@@ -2,8 +2,8 @@
 layout: ../../layouts/BlogLayout.astro
 title: Tech Startups Secure Record Funding
 author: Astronomer X
-authorImage: /src/assets/images/profile3.png
-image: "/src/assets/images/blog-image3.png"
+authorImage: /images/profile3.png
+image: "/images/blog-image3.png"
 date: 'December 10, 2023'
 category: Technology
 readingTime: "10"

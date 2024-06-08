@@ -2,8 +2,8 @@
 layout: ../../layouts/BlogLayout.astro
 title: Tech Giants Unveil Cutting-Edge AI Innovations
 author: "John Techson"
-authorImage: /src/assets/images/profile1.png
-image: "/src/assets/images/blog-image5.png"
+authorImage: /images/profile1.png
+image: "/images/blog-image5.png"
 date: 'January 20, 2023'
 category: Politics
 readingTime: "10"

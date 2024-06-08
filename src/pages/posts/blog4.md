@@ -2,8 +2,8 @@
 layout: ../../layouts/BlogLayout.astro
 title: A Decisive Victory for Progressive Policies
 author: Sarah Ethicist
-authorImage: /src/assets/images/profile2.png
-image: "/src/assets/images/blog-image4.png"
+authorImage: /images/profile2.png
+image: "/images/blog-image4.png"
 date: 'December 3, 2023'
 category: Politics
 readingTime: "15"
