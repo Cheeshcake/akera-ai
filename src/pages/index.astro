@@ -45,12 +45,22 @@ import "../styles/global.css";
         </div>
       </section>
       <section class="w-full sm:w-1/2 overflow-hidden">
-        <img
-          src="src/assets/images/Abstract Design.png"
-          class="abstract-design"
-        />
+        <img src="/images/Abstract Design.png" class="abstract-design" />
         <div>
-          <img src="src/assets/images/profiles.png" class="profiles" />
+          <div class="circle-container rounded-full mb-6">
+            <div class="profile-circle">
+                <img src="/images/profile1.png" alt="Person 1">
+            </div>
+            <div class="profile-circle">
+                <img src="/images/profile2.png" alt="Person 2">
+            </div>
+            <div class="profile-circle">
+                <img src="/images/profile3.png" alt="Person 3">
+            </div>
+            <div class="profile-circle">
+                <img src="/images/profile4.png" alt="Person 4">
+            </div>
+        </div>
         </div>
         <div>
           <h3 class="text-xl mb-3">Explore +1000 resources</h3>
@@ -82,10 +92,7 @@ import "../styles/global.css";
         <div class="grid grid-cols-1 md:grid-cols-3 self-stretch">
           <div>
             <div class="p-6">
-              <img
-                src="src/assets/icons/latest-icon.png"
-                class="icon w-16 mb-5"
-              />
+              <img src="/icons/latest-icon.png" class="icon w-16 mb-5" />
               <div class="flex justify-between">
                 <h3 class="text-xl mb-2">Latest News Updates</h3>
                 <div
@@ -112,10 +119,7 @@ import "../styles/global.css";
           </div>
           <div>
             <div class="p-6">
-              <img
-                src="src/assets/icons/expert-icon.png"
-                class="icon w-16 mb-5"
-              />
+              <img src="/icons/expert-icon.png" class="icon w-16 mb-5" />
               <div class="flex justify-between">
                 <h3 class="text-xl mb-2">Expert Contributors</h3>
                 <div
@@ -142,10 +146,7 @@ import "../styles/global.css";
           </div>
           <div>
             <div class="p-6">
-              <img
-                src="src/assets/icons/global-icon.png"
-                class="icon w-16 mb-5"
-              />
+              <img src="/icons/global-icon.png" class="icon w-16 mb-5" />
               <div class="flex justify-between">
                 <h3 class="text-xl mb-2">Global Readership</h3>
                 <div
@@ -182,7 +183,7 @@ import "../styles/global.css";
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div class="flex items-center">
           <div>
-            <img src="src/assets/icons/future.png" class="w-20 mb-5" />
+            <img src="/icons/future.png" class="w-20 mb-5" />
             <div class="flex items-center mb-4">
               <h3 class="ml-4 text-2xl font-bold">Future Technology Blog</h3>
             </div>
@@ -220,7 +221,7 @@ import "../styles/global.css";
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 mb-10">
         <div class="flex items-center">
           <div>
-            <img src="src/assets/icons/research.png" class="w-20 mb-3" />
+            <img src="/icons/research.png" class="w-20 mb-3" />
             <div class="flex items-center mb-4">
               <h3 class="ml-4 text-2xl font-bold">Research Insights Blogs</h3>
             </div>
@@ -261,39 +262,87 @@ import "../styles/global.css";
   <section class="p-8">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <Testimonial name="Sarah Thompson" location="San Francisco, USA" img="src/assets/images/profile1.png">
+        <Testimonial
+          name="Sarah Thompson"
+          location="San Francisco, USA"
+          img="/images/profile1.png"
+        >
           The ebooks on AI in education have been a game-changer for my
-              research. They provide in-depth insights and case studies that are
-              invaluable for staying updated.
+          research. They provide in-depth insights and case studies that are
+          invaluable for staying updated.
         </Testimonial>
-        <Testimonial name="Raj Patel" location="Mumbai, India" img="src/assets/images/profile2.png">
-          The whitepapers on renewable energy strategies have greatly
-              influenced my work. They offer detailed data and analysis.
-        </Testimonial> 
-        <Testimonial name="Emily Adams" location="London, UK" img="src/assets/images/profile3.png">
-          The AI in healthcare reports have been an essential resource for
-              our hospital. They highlight the latest innovations and best
-              practices, improving patient care.
+        <Testimonial
+          name="Raj Patel"
+          location="Mumbai, India"
+          img="/images/profile2.png"
+        >
+          The whitepapers on renewable energy strategies have greatly influenced
+          my work. They offer detailed data and analysis.
         </Testimonial>
-        <Testimonial name="Alan Jackson " location="Houston, USA" img="src/assets/images/profile1.png">
-          The reports on space mining prospects have fueled my passion for
-              space exploration. They provide a comprehensive view.
+        <Testimonial
+          name="Emily Adams"
+          location="London, UK"
+          img="/images/profile3.png"
+        >
+          The AI in healthcare reports have been an essential resource for our
+          hospital. They highlight the latest innovations and best practices,
+          improving patient care.
         </Testimonial>
-        <Testimonial name="Jessica Miller " location="Boston, USA" img="src/assets/images/profile2.png">
-          The research papers on genomic breakthroughs have been a goldmine
-              of information. They’ve shaped the direction of my research in
-              genomics.
+        <Testimonial
+          name="Alan Jackson "
+          location="Houston, USA"
+          img="/images/profile1.png"
+        >
+          The reports on space mining prospects have fueled my passion for space
+          exploration. They provide a comprehensive view.
         </Testimonial>
-        <Testimonial name="Diego Lopez" location="Barcelona, Spain" img="src/assets/images/profile3.png">
-          The ebooks on renewable energy strategies have given me the
-              insights I needed to pivot our startup toward sustainability.
+        <Testimonial
+          name="Jessica Miller "
+          location="Boston, USA"
+          img="/images/profile2.png"
+        >
+          The research papers on genomic breakthroughs have been a goldmine of
+          information. They’ve shaped the direction of my research in genomics.
         </Testimonial>
-        
+        <Testimonial
+          name="Diego Lopez"
+          location="Barcelona, Spain"
+          img="/images/profile3.png"
+        >
+          The ebooks on renewable energy strategies have given me the insights I
+          needed to pivot our startup toward sustainability.
+        </Testimonial>
       </div>
     </div>
   </section>
 
   <style>
+    .circle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-dark-10); /* Dark background */
+            padding: 10px 15px;
+            width: fit-content;
+           
+        }
+        .profile-circle {
+            position: relative;
+            border: 2px solid var(--color-dark-30); /* Border color */
+            border-radius: 50%;
+            overflow: hidden;
+            width: 50px;
+            height: 50px;
+        }
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+        .profile-circle + .profile-circle {
+            margin-left: -20px; /* Adjust this value for overlap */
+        }
     .container {
       width: 90%;
       margin: auto;
@@ -323,6 +372,5 @@ import "../styles/global.css";
       background-color: var(--color-dark-10);
       padding: 20px;
     }
-    
   </style>
 </MainLayout>
