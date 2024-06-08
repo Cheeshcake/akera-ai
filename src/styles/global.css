@@ -104,6 +104,19 @@ nav{
 
 .links-container{
   border-bottom: 2px solid var(--color-dark-20);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (min-width: 768px) {
+  .links-container {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .links-content{
+    width: 50%;
+  }
+  
+}
+.links-content{
+  width: 100%;
 }
 
 .link-title{
@@ -146,8 +159,15 @@ nav{
 }
 
 .bottom-logo{
-  width: 12%;
+  width: 80%;
   margin-right: 20px;
+}
+@media (min-width: 768px) {
+  .bottom-logo {
+    width: 20%;
+  }
+  
+  
 }
 
 .bottom-container{

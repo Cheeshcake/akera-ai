@@ -26,12 +26,12 @@ import "../../styles/global.css";
     <div
       class="blog-filter-btns flex justify-center items-center mb-10 flex-wrap"
     >
-      <button class="blog-filter-btn w-40">All</button>
-      <button class="blog-filter-btn w-40">Technology</button>
-      <button class="blog-filter-btn w-40">Politics</button>
-      <button class="blog-filter-btn w-40">Health</button>
-      <button class="blog-filter-btn w-40">Environment</button>
-      <button class="blog-filter-btn w-40">Sports</button>
+      <button class="blog-filter-btn ">All</button>
+      <button class="blog-filter-btn ">Technology</button>
+      <button class="blog-filter-btn ">Politics</button>
+      <button class="blog-filter-btn ">Health</button>
+      <button class="blog-filter-btn ">Environment</button>
+      <button class="blog-filter-btn ">Sports</button>
     </div>
     <BlogList />
   </div>
@@ -71,17 +71,25 @@ import "../../styles/global.css";
       width: 95%;
       margin: auto;
     }
-    /* .blog-filter-btns {
-      overflow-x: scroll;
-    } */
+    .blog-filter-btns {
+      width: 95%;
+      margin: auto;
+    }
     .blog-filter-btn {
       border: 0.2px solid var(--color-dark-20);
       border-radius: 5px;
       color: var(--color-grey-60);
       background-color: var(--color-dark-10);
       padding: 10px 20px;
-      margin-left: 50px;
+      margin-left: none;
       margin-bottom: 10px;
+      width: 80%;
+    }
+    @media (min-width: 440px) {
+      .blog-filter-btn {
+        width: 160px;
+        margin-left: 50px;
+      }
     }
     .blog-filter-btn:hover {
       background-color: var(--color-dark-20);
