@@ -24,7 +24,7 @@ import "../../styles/global.css";
   </div>
   <div class="blog-list">
     <div
-      class="blog-filter-btns mb-10 flex justify-start items-center"
+      class="blog-filter-btns mb-10 flex  items-center"
     >
       <button class="blog-filter-btn ">All</button>
       <button class="blog-filter-btn ">Technology</button>
@@ -46,6 +46,7 @@ import "../../styles/global.css";
       color: white;
       width: 95%;
       margin: auto;
+      margin-bottom: 60px;
     }
     .headline-title {
       font-family: "Kumbh Sans", sans-serif;
@@ -75,9 +76,13 @@ import "../../styles/global.css";
       width: 95%;
       margin: auto;
       overflow-x: scroll;
-      /* display: flex;
       justify-content: start;
-      align-items: center; */
+      
+    }
+    @media (min-width: 800px) {
+      .blog-filter-btns {
+        justify-content: center;
+      }
       
     }
 
@@ -85,7 +90,7 @@ import "../../styles/global.css";
       border: 0.2px solid var(--color-dark-20);
       border-radius: 5px;
       color: var(--color-grey-60);
-      background-color: var(--color-dark-10);
+      background-color: var(--color-dark-08);
       padding: 10px 20px;
       margin-bottom: 10px;
       margin-left: 30px;
@@ -98,7 +103,7 @@ import "../../styles/global.css";
       
     }
     .blog-filter-btn:hover {
-      background-color: var(--color-dark-20);
+      background-color: var(--color-dark-15);
       color: var(--color-grey-70);
     }
     .blog-filter-btn.active {
