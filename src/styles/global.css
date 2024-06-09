@@ -211,11 +211,14 @@ cuz I installed flowbite which style overwrites those of tailwind sometimes*/
 .source{
   background-color: var(--color-dark-10);
   width: 100%;
+  height: fit-content;
+  
   
 }
 @media (min-width: 640px) {
   .source {
     width: 30%;
+    height: 150px;
   }
 }
 
@@ -233,6 +236,8 @@ cuz I installed flowbite which style overwrites those of tailwind sometimes*/
 .circle{
   background-color: var(--color-yellow-55);
   cursor: pointer;
+  width: fit-content !important;
+  height: fit-content !important;
 }
 
 
@@ -245,4 +250,26 @@ cuz I installed flowbite which style overwrites those of tailwind sometimes*/
   margin-right: 10px;
 }
 
+
+/* Customizing the scrollbar */
+::-webkit-scrollbar {
+  width: 5px; 
+  height: 5px; 
+}
+
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-20); 
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-08); 
+  border-radius: 10px; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-10); 
+}
 

@@ -1,53 +1,26 @@
 # Deployed Product Link:
 https://akeraai.netlify.app
 
+# Few Notes:
 
-# Astro Starter Kit: Minimal
+## Why I chose headless cms instead of traditional cms:
+headless cms allows me to have freedom over the frontend meaning I can choose whichever framework to work with (in this case astro and tailwind)so there is no use of working with traditional cms for this project.
 
-```sh
-npm create astro@latest -- --template minimal
-```
+The choice of the cms option was the hardest step, so what I did was checking the astro documentations and then I joined the Astro discord server to base my decision off of people's experiences and I learned quite few things.
+Lots of cms options were presented to me such as strapi, contentful, netlifyCMS, directus...
+The ones I tried out in a simple blog themed astro project were strapi, sanity.io, netlifyCMS... then finally someone in discord suggested TinaCMS so I tried it out.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Why I chose TinaCMS:
+-contentful required money as the project grows
+-directus is not fully free (5-10$ monthly)
+Every option had its limitation and the main limitation of tinaCMS as I heard from the community is that it sometimes requires the use of react which I have no problem with.
+Furthermore, tinaCMS is perfectly documented on Astro docs and on its own website, it offers the option to create a good integration with Astro. And since it was very popular in the astro community I decided to give it a try.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+# Deployed Product Link:
+https://akeraai.netlify.app
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
+## TinaCMS:
+To access the admin page all you need to do is add: /admin to your url
+You can add and edit your blogs, once you do so, just wait a few minutes and go back to the product, your edits will be there!
 

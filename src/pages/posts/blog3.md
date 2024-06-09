@@ -6,7 +6,6 @@ authorImage: /images/profile3.png
 image: "/images/blog-image3.png"
 date: 'December 10, 2023'
 category: Technology
-readingTime: "10"
 description: "An overview of the recent surge in funding for tech startups, shaping the entrepreneurial landscape."
 ---
 

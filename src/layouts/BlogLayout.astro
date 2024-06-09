@@ -5,7 +5,7 @@ import RelatedPosts from "../components/RelatedPosts.astro";
 import { formatDate } from "../js/utils";
 
 const { frontmatter } = Astro.props;
-const { title, author, image, date, category, readingTime } = frontmatter;
+const { title, author, image, date, category } = frontmatter;
 const allPosts = await Astro.glob("../pages/posts/*.md");
 
 const relatedPosts = allPosts
@@ -14,6 +14,8 @@ const relatedPosts = allPosts
       post.frontmatter.category === category && post.frontmatter.title !== title
   )
   .slice(0, 3);
+
+let readingTime = 0; // Initialize reading time
 ---
 
 <MainLayout title={title}>
@@ -127,8 +129,7 @@ const relatedPosts = allPosts
             </div>
             <div>
               <p>Reading Time</p>
-              <h4>
-                {readingTime} Min
+              <h4 id="reading-time">
               </h4>
             </div>
             <div>
@@ -295,4 +296,18 @@ const relatedPosts = allPosts
       readMoreBtn.style.display = "none";
     });
   }
+
+  // Calculate reading time
+  const slotContent = document.querySelector(".blog-article");
+  const slotText = slotContent?.textContent ?? "";
+  const wordCount = slotText.trim().split(/\s+/).length;
+  const readingTime = Math.ceil(wordCount / 200);
+
+  const readingTimeElement = document.getElementById("reading-time");
+  if (readingTimeElement) {
+    readingTimeElement.textContent = `${readingTime} Min`;
+  } else {
+    console.error("Reading time element not found");
+  }
+  console.log(wordCount);
 </script>

@@ -6,7 +6,6 @@ authorImage: /images/profile3.png
 image: "/images/blog-image6.png"
 date: 'February 4, 2022'
 category: Politics
-readingTime: "17"
 description: "The recent election cycle witnessed a surge in progressive victories, marking a significant shift in the political landscape. This blog post explores these wins, analyzing the factors that fueled them and examining their potential long-term impact on progressive politics."
 ---
 

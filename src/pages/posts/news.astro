@@ -24,7 +24,7 @@ import "../../styles/global.css";
   </div>
   <div class="blog-list">
     <div
-      class="blog-filter-btns flex justify-center items-center mb-10 flex-wrap"
+      class="blog-filter-btns mb-10 flex justify-start items-center"
     >
       <button class="blog-filter-btn ">All</button>
       <button class="blog-filter-btn ">Technology</button>
@@ -74,22 +74,28 @@ import "../../styles/global.css";
     .blog-filter-btns {
       width: 95%;
       margin: auto;
+      overflow-x: scroll;
+      /* display: flex;
+      justify-content: start;
+      align-items: center; */
+      
     }
+
     .blog-filter-btn {
       border: 0.2px solid var(--color-dark-20);
       border-radius: 5px;
       color: var(--color-grey-60);
       background-color: var(--color-dark-10);
       padding: 10px 20px;
-      margin-left: none;
       margin-bottom: 10px;
-      width: 80%;
+      margin-left: 30px;
+      
     }
     @media (min-width: 440px) {
       .blog-filter-btn {
         width: 160px;
-        margin-left: 50px;
       }
+      
     }
     .blog-filter-btn:hover {
       background-color: var(--color-dark-20);

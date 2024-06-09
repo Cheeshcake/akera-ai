@@ -6,7 +6,6 @@ authorImage: "/images/profile2.png"
 image: "/images/blog-image2.png"
 date: "October 11, 2023"
 category: "Technology"
-readingTime: "15"
 description: "An in-depth analysis of the rapid advancements in autonomous vehicle technology and their impact on transportation."
 ---
 

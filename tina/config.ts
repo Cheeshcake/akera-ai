@@ -70,12 +70,6 @@ export default defineConfig({
           },
           {
             type: "string",
-            name: "readingTime",
-            label: "Reading Time (in minutes)",
-            required: true,
-          },
-          {
-            type: "string",
             name: "description",
             label: "Description",
             required: true,

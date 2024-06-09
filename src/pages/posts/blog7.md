@@ -6,7 +6,6 @@ authorImage: "/images/profile4.png"
 image: "/images/blog-image7.png"
 date: "November 22, 2023"
 category: "Technology"
-readingTime: "8"
 description: "Dive into the latest advancements in blockchain technology and its transformative impact on the financial sector, from decentralized finance to secure transactions."
 ---
 

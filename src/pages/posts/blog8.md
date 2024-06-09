@@ -6,7 +6,6 @@ authorImage: "/images/profile4.png"
 image: "/images/blog-image8.png"
 date: "December 5, 2023"
 category: "Politics"
-readingTime: "12"
 description: "Examine the shifting dynamics in global politics, from emerging superpowers to evolving diplomatic relations, and their implications for international stability."
 
 ---

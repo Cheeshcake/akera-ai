@@ -6,7 +6,6 @@ authorImage: "/images/profile1.png"
 image: "/images/blog-image1.png"
 date: "October 15, 2023"
 category: "Technology"
-readingTime: "10"
 description: "Explore the latest innovations from tech industry leaders, unveiling new products that promise to transform the digital landscape."
 ---
 
